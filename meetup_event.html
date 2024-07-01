@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Meetup Events Page</title>
+    <link rel="stylesheet" href="styles/style_event.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="container_logo">
+        <a href="./meetup_main.html"
+          ><img src="assets/images/Meetup.svg" alt="Meetup"
+        /></a>
+      </div>
+      <div class="search_block">
+        <form class="search_container">
+          <div class="search_icon">
+            <img src="assets/Icons/search_gray.svg" alt="search" />
+          </div>
+          <input
+            class="search_events"
+            type="search"
+            placeholder="Search events"
+          />
+          <input
+            id="search_location"
+            type="search"
+            placeholder="Search location"
+          />
+          <button class="search_button">
+            <img src="./assets/Icons/search_white.svg" alt="search" />
+          </button>
+        </form>
+      </div>
+      <div class="container_right">
+        <div class="english">
+          <img
+            src="assets/Icons/language_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+            alt=""
+          />
+          <p>English</p>
+        </div>
+        <button class="logIn">Log In</button>
+        <button class="signUp">Sign up</button>
+      </div>
+    </nav>
+    <main>
+      <section class="events_main_container">
+        <div class="events_filters_container">
+          <h1>Events near New York, NY</h1>
+          <div class="event_header">
+            <h3>Events</h3>
+          </div>
+          <div class="filters_container">
+            <form id="typeEventMenu" class="type_menu" data-state="">
+              <div class="selectMenuEventTitle" data-default="Option 0">
+                Any type
+              </div>
+            </form>
+          </div>
+          <div class="events_container"></div>
+        </div>
+        <div class="map_container"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="section_footer">
+        <div class="footer_call_to_action">
+          <h4>Create your own Meetup group.</h4>
+          <button>Get Started</button>
+        </div>
+        <div class="footer_navigation">
+          <div class="footer_nav_section">
+            <h4>Your Account</h4>
+            <ul>
+              <li>Sign up</li>
+              <li>Log in</li>
+              <li>Help</li>
+              <li>Become an Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer_nav_section">
+            <h4>Discover</h4>
+            <ul>
+              <li>Groups</li>
+              <li>Calendar</li>
+              <li>Topics</li>
+              <li>Cities</li>
+              <li>Online Events</li>
+              <li>Local Guides</li>
+              <li>Make Friends</li>
+            </ul>
+          </div>
+          <div class="footer_nav_section">
+            <h4>Meetup</h4>
+            <ul>
+              <li>About</li>
+              <li>Blog</li>
+              <li>Meetup Pro</li>
+              <li>Careers</li>
+              <li>Apps</li>
+              <li>Podcast</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer_social">
+          <h4>Follow us</h4>
+          <div class="container_social">
+            <div class="icons">
+              <a href="https://de-de.facebook.com/">
+                <div class="layer">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span class="fab fa-facebook-f"></span>
+                </div>
+                <p class="text">Facebook</p>
+              </a>
+              <a
+                href="https://x.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJteCI6IjIifQ%3D%3D%22%7D"
+              >
+                <div class="layer">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span class="fab fa-twitter"></span>
+                </div>
+                <p class="text">Twitter</p>
+              </a>
+              <a href="https://www.instagram.com/">
+                <div class="layer">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span class="fab fa-instagram"></span>
+                </div>
+                <p class="text">Instagram</p>
+              </a>
+              <a href="https://www.tiktok.com/explore">
+                <div class="layer">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span class="fab fa-tiktok"></span>
+                </div>
+                <p class="text">TikTok</p>
+              </a>
+              <a href="https://www.youtube.com/?app=desktop&hl=uk">
+                <div class="layer">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span class="fab fa-youtube"></span>
+                </div>
+                <p class="text">YouTube</p>
+              </a>
+            </div>
+            <div class="icons_mobile">
+              <a href="https://de-de.facebook.com/" class="facebook">
+                <img
+                  src="assets/Icons/Link - Meetup on Facebook → SVG.svg"
+                  alt="facebook"
+                />
+              </a>
+
+              <a href="https://www.twitter.com" class="twitter">
+                <img
+                  src="assets/Icons/Link - Meetup on Twitter → SVG.svg"
+                  alt="twitter"
+                />
+              </a>
+
+              <a href="https://www.youtube.com" class="youtube">
+                <img
+                  src="assets/Icons/Link - Meetup on YouTube → SVG.svg"
+                  alt="youtube"
+                />
+              </a>
+
+              <a href="https://www.instagram.com" class="instagram">
+                <img
+                  src="assets/Icons/Link - Instagram → SVG.svg"
+                  alt="instagram"
+                />
+              </a>
+
+              <a href="https://www.tiktok.com" class="tiktok">
+                <img src="assets/Icons/Link - TikTok → SVG.svg" alt="tiktok" />
+              </a>
+            </div>
+            <div class="store">
+              <div>
+                <a
+                  href="https://play.google.com/store/games?device=windows&gl=DE&utm_source=emea_Med&utm_medium=hasem&utm_content=Sep2020&utm_campaign=Evergreen&pcampaignid=MKT-EDR-emea-de-1707522-Med-hasem-py-Evergreen-Sep2020-Text_Search_BKWS%7CONSEM_kwid_43700008794262696&gad_source=1&gclid=CjwKCAjw7NmzBhBLEiwAxrHQ-T2izqgR6qFTMzFJWCxXqmIL71SJdKTtZRed_jXDHREdOTBRCpfNUxoCOuoQAvD_BwE&gclsrc=aw.ds&pli=1"
+                >
+                  <img src="assets/images/Google Play.png" alt="Google Play" />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.apple.com/de/app-store/">
+                  <img src="assets/images/App Store.png" alt="App Store" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-legal">
+          <p>© 2024 Meetup</p>
+          <ul>
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+            <li>Do Not Sell or Share My Personal Data</li>
+            <li>Cookie Policy</li>
+            <li>Help</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="scripts/index.js"></script>
+</html>
