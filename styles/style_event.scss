@@ -102,13 +102,23 @@ nav{
 /*===============================MAIN==============================*/
 main {
     @include flexBox(column, center, center);
-    margin-top: 46px;
     width: 80%;
     margin: 0 auto;
-    
-
-    
   }
+
+    .events_main_container{
+      @include flexBox(row, space-between, start);
+
+    }
+
+
+
+
+
+
+
+
+
 /*=======================================section_footer=====================================*/
 footer {
     background-color: #212121;
