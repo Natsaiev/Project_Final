@@ -41,10 +41,11 @@ nav {
 
 .search_container input {
   border: none;
-  padding: 20px;
+  padding: 15px;
   outline: none;
   flex-grow: 1; /* Позволяет input расти, заполняя доступное пространство внутри контейнера */
   min-width: 0; /* Предотвращает input от выхода за пределы контейнера */
+  font-size: 22px;
 }
 
 .search_icon {
@@ -344,7 +345,11 @@ main {
   font-weight: 400;
   margin-bottom: 25px;
 }
-.container_join_meetup button {
+.container_join_meetup a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   color: #FFFFFF;
   font-size: 16px;
   border: none;
@@ -354,8 +359,9 @@ main {
   width: 180px;
   height: 45px;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
 }
-.container_join_meetup button:hover {
+.container_join_meetup a:hover {
   background-color: #C91E50;
   transform: scale(1.05);
 }
@@ -438,7 +444,7 @@ main {
 .container_photo_popular_cities {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: normal;
   flex-wrap: wrap;
   gap: 15px;
@@ -918,12 +924,16 @@ footer {
     font-size: 1.2rem;
   }
   /*===============================MAIN 768PX==============================*/
+  .section_main {
+    max-width: 90%;
+    margin: 0 auto;
+  }
   /*===============================THEPEOPLE==============================*/
   .thePeople {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    margin: 0 5% 0 5%;
+    margin: auto;
   }
   .thePeopleLeft {
     gap: 15px;
@@ -937,6 +947,13 @@ footer {
   }
   .thePeopleLeft a {
     display: none;
+  }
+  .thePeopleRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
   .thePeopleRight img {
     width: 270px;
@@ -971,10 +988,9 @@ footer {
     justify-content: space-between;
     align-items: normal;
     gap: 10px;
-    border-top: 1px solid #D9D9D9;
-    border-radius: initial;
     max-width: 100%;
-    padding-top: 50px;
+    padding-top: 10px;
+    margin-top: 10px;
   }
   .container_photo_events .container_cards .event_name {
     display: flex;
@@ -984,6 +1000,10 @@ footer {
   }
   .container_heading_online > button {
     display: none;
+  }
+  .line {
+    border: 1px solid #D9D9D9;
+    margin: 20px 0px;
   }
   /*===============================CONTAINER_JOIN_MEETUO==============================*/
   .container_join_meetup {
@@ -1035,5 +1055,16 @@ footer {
   }
   .icons {
     display: inline-flex;
+  }
+  .line {
+    display: none;
+  }
+}
+@media (max-width: 426px) {
+  .container_photo_popular_cities {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 }/*# sourceMappingURL=style_main.css.map */

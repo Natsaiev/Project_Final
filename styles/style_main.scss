@@ -35,10 +35,11 @@ nav{
 
 .search_container input {
     border: none;
-    padding: 20px;
+    padding: 15px;
     outline: none;
     flex-grow: 1; /* Позволяет input расти, заполняя доступное пространство внутри контейнера */
     min-width: 0; /* Предотвращает input от выхода за пределы контейнера */
+    font-size: 22px;
 }
 .search_icon {
     padding: 0 10px;
@@ -334,7 +335,8 @@ font-weight: 600;
        margin-bottom: 25px;
     }
 
-    button {
+    a {
+        @include flexBox(row, center, center);
         color: #FFFFFF;
         font-size: 16px;
         border: none;
@@ -344,9 +346,10 @@ font-weight: 600;
         width: 180px;
         height: 45px;
         transition: background-color 0.3s ease, transform 0.3s ease;
+        text-decoration: none;
     }
 
-    button:hover {
+    a:hover {
         background-color: #C91E50;
         transform: scale(1.05);
     }
@@ -434,7 +437,7 @@ font-weight: 600;
 }
 
 .container_photo_popular_cities{
-    @include flexBox(row, space-between, normal);
+    @include flexBox(row, space-around, normal);
     flex-wrap: wrap;
     gap: 15px;
 }
@@ -867,7 +870,7 @@ margin-bottom: 25px;
 
 @media screen and (max-width: 768px){
     /*========================NAVBAR 768PX ================================*/
-       
+        
         nav {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -912,12 +915,16 @@ margin-bottom: 25px;
         
         
     /*===============================MAIN 768PX==============================*/
+ .section_main{
+        max-width: 90%;
+        margin: 0 auto;
+    }
     /*===============================THEPEOPLE==============================*/
     .thePeople{
         flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
-        margin: 0 5% 0 5%;
+        margin: auto;
         
        }
 
@@ -939,6 +946,8 @@ margin-bottom: 25px;
        }
 
        .thePeopleRight{
+        @include flexBox(row, center, center);
+        width: 100%;
         img {
             width: 270px;
           }
@@ -965,6 +974,7 @@ margin-bottom: 25px;
         }
        
        }
+       
        /*===============================CONTAINER_PHOTO_EVENTS==============================*/
        .container_photo_events{
            @include flexBox(column, space-between, normal);
@@ -972,10 +982,9 @@ margin-bottom: 25px;
            .container_cards{
             @include flexBox(row, space-between, normal);
             gap: 10px;
-               border-top: 1px solid #D9D9D9;
-               border-radius: initial;
             max-width: 100%;
-            padding-top:50px ;
+            padding-top:10px ;
+            margin-top: 10px;
                
             
             .event_name{
@@ -987,6 +996,10 @@ margin-bottom: 25px;
 
        .container_heading_online > button{
            display: none;
+        }
+        .line{
+            border: 1px solid #D9D9D9;
+            margin: 20px 0px
         }
         /*===============================CONTAINER_JOIN_MEETUO==============================*/
 
@@ -1038,5 +1051,22 @@ margin-bottom: 25px;
     .icons {
         display: inline-flex;
     }
+
+    .line{
+        display: none;
+    }
 }
 
+
+@media(max-width: 426px){
+    .container_photo_popular_cities{
+        @include flexBox(row, center, center)}
+}
+
+
+
+@media (max-width: 375px){
+
+
+    
+}

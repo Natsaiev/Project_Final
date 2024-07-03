@@ -104,15 +104,207 @@ main {
     @include flexBox(column, center, center);
     width: 80%;
     margin: 0 auto;
+    
   }
 
     .events_main_container{
       @include flexBox(row, space-between, start);
+width: 100%;
+margin-top: 50px;
+gap: 10px;
+.event_header{
+  margin-bottom: 15px;
+  width: max-content;
+}
+h3{
+  border-bottom: 5px solid #005C6B;
+  color: #005C6B;
+}
+}
+/*===============================FILTERS==============================*/
+.filters_container {
+  @include flexBox(row, start, center);
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.select_menu {
+  width: 160px;
+  height: 50px;
+  background-color: #F6F7F8;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.select_menu_event_list {
+  @include flexBox(row, start, space-between);
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #F6F7F8;
+  cursor: pointer;
+  position: relative;
+}
+
+.select_menu_event_content {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0 0 30px 30px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+.select_menu[data-state="active"]{
+  border-radius: 30px 30px 0 0;
+}
+.select_menu[data-state="active"] .select_menu_event_content {
+  display: flex;
+  opacity: 1;
+  max-height: 300px; /* Adjust this value based on your content */
+  overflow-y: auto;
+  border-radius:  0 0 30px 30px;
+}
+
+.input_label {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input_label:hover {
+  background-color: #e0e0e0;
+}
+
+.input_select {
+  display: none;
+}
+
+.input_select:checked + .input_label {
+  background-color: #dedede;
+}
+/*===============================GOOGLE_MAP==============================*/
+
+.map_container{
+  max-width: 100%;
+
+  h2 {
+    font-size: 2.0rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+  .google_map {
+    max-width: 100%;
+  }
+
+}
+
+/*===============================EVENT_LIST==============================*/
+.events_container {
+  @include flexBox(column, normal, normal);
+  max-width: 80%;
+  margin-top: 24px;
+  margin-bottom: 36px;
+  gap: 20px;
+  .border {
+    border: 1px solid #D9D9D9;
+  }
+
+  .eventContainer {
+    @include flexBox(row, normal, normal);
+    max-width: 100%;
+    max-height: 400px;
+    padding-bottom: 10px;
+    margin-top: 16px;
+    gap: 12px;
+
+    .eventImageContainer {
+      position: relative;
+    }
+
+    .eventImage {
+      width: 160px;
+      height: 100px;
+      border-radius: 8px;
+    }
+
+    .eventBadge {
+      width: max-content;
+      background-color: #FFFFFF;
+      padding: 2px 8px;
+      border-radius: 4px;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      //display: none;
+      .eventBadgeType {
+        color: #212121;
+      }
+
+      .eventBadgeType:before {
+        content: url("/assets/Icons/camera_icon.svg");
+        @include iconInlineAlign(3px);
+      }
+
 
     }
 
+    .eventBadge.hidden {
+      display: none;
+    }
 
 
+    .eventInfoContainer {
+      @include flexBox(column, start, start);
+      max-width: 100%;
+      gap: 4px;
+
+      .eventDateInfo {
+        font-size: 1.4rem;
+        color: #7C6F50;
+      }
+
+      .eventTitleHeader {
+        font-size: 1.6rem;
+      }
+
+      .eventType {
+        display: none;
+      }
+
+      .eventLocationInfo {
+        font-size: 1.4rem;
+      }
+
+      .eventAttendees {
+        margin-top: 28px;
+        font-size: 1.4rem;
+        &:after {
+          content: " attendees";
+        }
+      }
+
+    }
+  }
+
+}
+.eventContainer:hover{
+  border: 1px solid #00798A; 
+    box-shadow: 0 0 10px rgba(0, 121, 138, 0.5); 
+    transform: scale(1.05);
+    border-radius: 10px;
+}
 
 
 
@@ -434,8 +626,50 @@ margin-bottom: 25px;
             }
         }
         
-        
+      
+/*===============================MAIN==============================*/  
+.map_container{
+  display: none;
+} 
+.select_menu {
+      width: 130px;
+      height: 50px;
+      background-color: #F6F7F8;
+      border-radius: 30px;
+      position: relative;
+      z-index: 1;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+    }
     
+.events_main_container{
+  @include flexBox(column, center, start);
+  margin-top: 20px;
+
+  .events_filters_container{
+    max-width: 100%;
+  }
+}
+.events_container{
+  max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*===============================FOOTER==============================*/
  footer {
     .footer_navigation{
@@ -457,6 +691,8 @@ margin-bottom: 25px;
 }
 }
 
+
+
 @media (min-width: 769px){
     .icons_mobile{
         display: none;
@@ -464,5 +700,21 @@ margin-bottom: 25px;
     .icons {
         display: inline-flex;
     }
+
+  
 }
 
+
+@media (max-width: 425px){
+  
+  
+  
+  .select_menu_event_list {
+    @include flexBox(row, start, space-between);
+    padding: 10px 20px 10px 30px;
+    border-radius: 30px;
+    background-color: #F6F7F8;
+    cursor: pointer;
+    position: relative;
+  }
+}
