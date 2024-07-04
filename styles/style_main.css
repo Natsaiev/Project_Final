@@ -263,9 +263,14 @@ main {
   transform: scale(1.05);
 }
 
-.container_cards .photo_events img {
+.container_cards {
   width: 100%;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
+}
+
+.photo_events img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .photo_events {
@@ -985,7 +990,7 @@ footer {
   .container_photo_events .container_cards {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: normal;
     align-items: normal;
     gap: 10px;
     max-width: 100%;
@@ -1027,6 +1032,24 @@ footer {
   .container_discover_start .discover, .container_discover_start .start {
     width: 100%;
   }
+  .photo_events img {
+    width: 300px;
+  }
+  .event_name h4 {
+    font-size: 18px;
+  }
+  .event_name .location {
+    font-size: 14px;
+  }
+  .event_name .date p {
+    font-size: 14px;
+  }
+  .container_join_meetup .img_hands {
+    max-width: 300px;
+  }
+  .cards_friednships {
+    max-width: 320px;
+  }
   /*===============================CONTAINER_FRIENDSHIPS==============================*/
   /*===============================FOOTER==============================*/
   footer .footer_navigation {
@@ -1066,5 +1089,43 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+  .photo_events img {
+    width: 180px;
+  }
+  .event_name h4 {
+    font-size: 18px;
+  }
+  .event_name .location {
+    font-size: 14px;
+  }
+  .event_name .date p {
+    font-size: 14px;
+  }
+  .container_join_meetup .img_hands {
+    max-width: 300px;
+  }
+  .cards_friednships {
+    max-width: 320px;
+  }
+}
+@media (max-width: 376px) {
+  .photo_events img {
+    width: 120px;
+  }
+  .event_name h4 {
+    font-size: 16px;
+  }
+  .event_name .location {
+    font-size: 12px;
+  }
+  .event_name .date p {
+    font-size: 12px;
+  }
+  .container_join_meetup .img_hands {
+    max-width: 250px;
+  }
+  .cards_friednships {
+    max-width: 320px;
   }
 }/*# sourceMappingURL=style_main.css.map */

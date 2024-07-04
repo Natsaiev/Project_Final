@@ -4,7 +4,6 @@
 button:hover {
   cursor: pointer;
 }
-
 /*====================NAVBAR======================*/
 
 nav{
@@ -251,9 +250,14 @@ font-weight: 600;
     box-shadow: 0 0 10px rgba(0, 121, 138, 0.5); 
     transform: scale(1.05);
 }
-.container_cards .photo_events img {
+.container_cards{
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px; 
+} 
+
+.photo_events img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 
@@ -980,7 +984,7 @@ margin-bottom: 25px;
            @include flexBox(column, space-between, normal);
            gap: 20px;
            .container_cards{
-            @include flexBox(row, space-between, normal);
+            @include flexBox(row, normal, normal);
             gap: 10px;
             max-width: 100%;
             padding-top:10px ;
@@ -1022,6 +1026,31 @@ margin-bottom: 25px;
         }
     }
 
+    .photo_events img {
+        width: 300px;
+    }
+    
+        .event_name{
+            h4{
+                font-size: 18px;
+            }
+            .location{
+                font-size: 14px;
+            }
+            .date p{
+                font-size: 14px;
+            }
+            
+        }
+        .container_join_meetup{
+            .img_hands{
+            max-width: 300px;
+        }
+    }
+    .cards_friednships{
+        max-width: 320px;
+    }
+
 /*===============================CONTAINER_FRIENDSHIPS==============================*/
 /*===============================FOOTER==============================*/
  footer {
@@ -1061,12 +1090,59 @@ margin-bottom: 25px;
 @media(max-width: 426px){
     .container_photo_popular_cities{
         @include flexBox(row, center, center)}
+
+        .photo_events img {
+            width: 180px;
+        }
+        
+            .event_name{
+                h4{
+                    font-size: 18px;
+                }
+                .location{
+                    font-size: 14px;
+                }
+                .date p{
+                    font-size: 14px;
+                }
+                
+            }
+            .container_join_meetup{
+                .img_hands{
+                max-width: 300px;
+            }
+        }
+        .cards_friednships{
+            max-width: 320px;
+        }
 }
 
 
 
-@media (max-width: 375px){
+@media (max-width: 376px){
+.photo_events img {
+    width: 120px;
+}
 
+    .event_name{
+        h4{
+            font-size: 16px;
+        }
+        .location{
+            font-size: 12px;
+        }
+        .date p{
+            font-size: 12px;
+        }
+        
+    }
+    .container_join_meetup{
+        .img_hands{
+        max-width: 250px;
+    }
+}
+.cards_friednships{
+    max-width: 320px;
+}
 
-    
 }
